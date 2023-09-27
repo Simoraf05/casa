@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="page-main">
+    <app-grid [title]='title' [item]="item" [active_item]="active_item"></app-grid>
+    <app-sidebar appHoverEffectSidebar></app-sidebar>
+    <div class="main-content main-content-casa app-content">
+        <div class="main-container container-fluid modules-content" style="padding-inline-start: 170px !important;">
+            <div class="container mt-4">
+
+                <div class='residence__details'>
+
+                    <div class="">
+                        <div class="">
+                            <h1>Residence <span>{{active_item}}</span></h1>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col" style="visibility: hidden;">
+                            visibily hidden
+                        </div>
+                        <div class="col-6" style="visibility: hidden;">
+                            visibily hidden
+                        </div>
+                        
+                        <div class="input-group mb-3 col">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="btn btn-success" (click)='updateResidence()'><i class="fas fa-edit"></i></button>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-block">
+                        <div class="bloc_1">
+                          <fieldset>
+                            <div class="residence-details">
+                              <div><label>residence_name :</label><span>{{residence.residence_name}}</span></div>
+                              <div><label>nbr_lots :</label><span>{{residence.nbr_lots}}</span></div>
+                              <div><label>longitude :</label><span>{{residence.longitude}}</span></div>
+                              <div><label>latitude :</label><span>{{residence.latitude}}</span></div>
+                              <div><label>contact_phone_1 :</label><span>{{residence.contact_phone_1}}</span></div>
+                              <div><label>contact_phone_2 :</label><span>{{residence.contact_phone_2}}</span></div>
+                              <div><label>contact_phone_3 :</label><span>{{residence.contact_phone_3}}</span></div>
+                              <div><label>contact_name_1 :</label><span>{{residence.contact_name_1}}</span></div>
+                              <div><label>contact_name_2 :</label><span>{{residence.contact_name_2}}</span></div>
+                              <div><label>contact_name_3 :</label><span>{{residence.contact_name_3}}</span></div>
+                              <div><label>contact_mail_1 :</label><span>{{residence.contact_mail_1}}</span></div>
+                              <div><label>contact_mail_2 :</label><span>{{residence.contact_mail_2}}</span></div>
+                              <div><label>contact_mail_3 :</label><span>{{residence.contact_mail_3}}</span></div>
+                              <div><label>adresse_1 :</label><span>{{residence.adresse_1}}</span></div>
+                              <div><label>adresse_2 :</label><span>{{residence.adresse_2}}</span></div>
+                              <div><label>city_name :</label><span>{{residence.city_name}}</span></div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--
+
+                                      <div><label>residence_name :</label><input *ngIf="update" type="text" name="name" required><span *ngIf="!update">{{residence.residence_name}}</span></div>
+                              <div><label>nbr_lots :</label><input type="text" name="name" required><span>{{residence.nbr_lots}}</span></div>
+                              <div><label>longitude :</label><input type="text" name="name" required><span>{{residence.longitude}}</span></div>
+                              <div><label>latitude :</label><input type="text" name="name" required><span>{{residence.latitude}}</span></div>
+                              <div><label>contact_phone_1 :</label><input type="text" name="name" required><span>{{residence.contact_phone_1}}</span></div>
+                              <div><label>contact_phone_2 :</label><input type="text" name="name" required><span>{{residence.contact_phone_2}}</span></div>
+                              <div><label>contact_phone_3 :</label><input type="text" name="name" required><span>{{residence.contact_phone_3}}</span></div>
+                              <div><label>contact_name_1 :</label><input type="text" name="name" required><span>{{residence.contact_name_1}}</span></div>
+                              <div><label>contact_name_2 :</label><input type="text" name="name" required><span>{{residence.contact_name_2}}</span></div>
+                              <div><label>contact_name_3 :</label><input type="text" name="name" required><span>{{residence.contact_name_3}}</span></div>
+                              <div><label>contact_mail_1 :</label><input type="text" name="name" required><span>{{residence.contact_mail_1}}</span></div>
+                              <div><label>contact_mail_2 :</label><input type="text" name="name" required><span>{{residence.contact_mail_2}}</span></div>
+                              <div><label>contact_mail_3 :</label><input type="text" name="name" required><span>{{residence.contact_mail_3}}</span></div>
+                              <div><label>adresse_1 :</label><input type="text" name="name" required><span>{{residence.adresse_1}}</span></div>
+                              <div><label>adresse_2 :</label><input type="text" name="name" required><span>{{residence.adresse_2}}</span></div>
+                              <div><label>city_name :</label><input type="text" name="name" required><span>{{residence.city_name}}</span></div>
+    -->

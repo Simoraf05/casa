@@ -1,0 +1,48 @@
+.main-content-casa:after {
+  content: "";
+  height: 148px;
+  background: #645cbb;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+  inset-inline-start: 0;
+}
+.content-title {
+  position: relative; /* Make sure it has a position other than static */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+
+}
+.content-title img {
+  width: 25px;
+  filter: invert(1);
+  margin-right: 10px;
+}
+
+.content-title::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 2px; /* Adjust the thickness of the underline as needed */
+  background-color: #ffffff; /* Adjust the color of the underline as needed */
+  bottom: 0;
+  left: 35%;    
+  transform: scaleX(0); /* Initially, the underline is not visible */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease; /* Add animation transition */
+}
+
+.content-title:hover::after {
+  transform: scaleX(1); /* When hovering, expand the underline to full width */
+  transform-origin: bottom left;
+}
+@media (max-width: 863px) {
+  .breadcrumb-header-casa {
+    display: flex !important;
+  }
+}
+

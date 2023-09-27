@@ -1,0 +1,22 @@
+<app-header></app-header>
+<!--<app-agent-detail *ngIf="!screenWidth"></app-agent-detail>-->
+
+<!--<div class="row modules-content">
+    <div class="col">
+    </div>
+    <div class="col-12 modules__selected">
+        hello
+    </div>
+</div>-->
+
+<div class="page-main">
+    <!-- //sidebar -->
+    <app-grid [title]='title' [item]="item" [active_item]="active_item"></app-grid>
+
+    <app-sidebar appHoverEffectSidebar></app-sidebar>
+    <div class="main-content main-content-casa app-content">
+        <div class="main-container container-fluid modules-content" style="padding-inline-start: 170px !important;">
+            <!-- // contetnt  -->
+            agents
+        </div>
+    </div>

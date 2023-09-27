@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CasaConnect</title>
+      <base href="/" />
+       <!-- <base href="/adminor/preview/" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="CasaConnect" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/img/brand/logo_icone.jpeg" style="mix-blend-mode: multiply;"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugins/bootstrap/css/bootstrap.min.css"
+      id="style"
+    />
+  </head>
+  <body class='app sidenav-toggled'>
+    <app-root></app-root>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Function to add or remove the sidenav-toggled class
+        function toggleSidenavClass() {
+          var currentPath = window.location.pathname;
+          var body = document.body;
+
+          // Check if the URL starts with "/holder" or "/work-space"
+          if (currentPath.startsWith("/holder") || currentPath.startsWith("/work-space")) {
+            body.className = "app";
+          } else if (currentPath.startsWith("/adminor")) {
+            // Check the viewport width
+            if (window.innerWidth < 991) {
+              body.className = "main-body app sidebar-mini ltr sidebar-gone sidenav-toggled";
+            } else {
+              body.className = "main-body app sidebar-mini ltr sidebar-gone";
+            }
+          }
+        }
+
+        // Initial call to set the class based on the viewport width
+        toggleSidenavClass();
+
+        // Listen for the window's resize event
+        window.addEventListener("resize", toggleSidenavClass);
+      });
+    </script>
+  </body>
+</html>
+<!-- main-body light-theme  -->

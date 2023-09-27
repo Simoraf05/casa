@@ -1,0 +1,43 @@
+<app-header></app-header>
+<!--<app-agent-detail *ngIf="!screenWidth"></app-agent-detail>-->
+
+<!--<div class="row modules-content">
+    <div class="col">
+    </div>
+    <div class="col-12 modules__selected">
+        hello
+    </div>
+</div>-->
+
+<div class="page-main">
+  <!-- //sidebar -->
+  <app-grid [title]='title' [item]="item" [active_item]="active_item"></app-grid>
+
+  <app-sidebar appHoverEffectSidebar></app-sidebar>
+  <div class="main-content main-content-casa app-content">
+    <div class="main-container main-container-accueil container-fluid modules-content">
+      <!-- Content -->
+      <div class="row" #rowContainer>
+        <div class="col col-accueil col-md-6 col-lg-4 mb-4" *ngFor="let item of slides; let i = index" (click)="item.path && selectItem(i, item.path)">
+          <div class="card cadr-accueil card-img-holder text-default bg-color">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="my-auto">
+                  <div class="circle-icon bg-primary text-center align-self-center shadow-primary">
+                    <img src="./assets/img/svgicons/circle.svg" alt="circle" class="card-img-absolute" />
+                    <i class="bx bx-user tx-30 icon-user-bx text-white"></i>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="mb-0 tx-18">{{ item.title }}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  

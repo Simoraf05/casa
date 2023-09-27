@@ -1,0 +1,155 @@
+.add__res{
+    display: flex;
+    justify-content: center;
+}
+.main-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+
+  form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  fieldset {
+    border: none;
+    border-top: 1px solid #6A3DA4;
+  }
+
+  .account-details,
+  .personal-details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-around;
+  }
+  .input__field{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .account-details>div,
+  .personal-details>div>div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .account-details>div,
+  .personal-details>div,
+  input,
+  label {
+    width: 100%;
+  }
+
+  .input__field label {
+    padding: 0 5px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  input {
+    padding: 5px;
+    vertical-align: middle;
+  }
+
+  .checkbox {
+    margin-bottom: 10px;
+  }
+
+  select,
+  .children,
+  .gender,
+  .bdate-block {
+    width: calc(100% + 26px);
+    padding: 5px 0;
+  }
+
+  select {
+    background: transparent;
+  }
+
+  .gender input {
+    width: auto;
+  }
+
+  .gender label {
+    padding: 0 5px 0 0;
+  }
+
+  .bdate-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .birthdate select.day {
+    width: 35px;
+  }
+
+  .birthdate select.mounth {
+    width: calc(100% - 94px);
+  }
+
+  .birthdate input {
+    width: 38px;
+    vertical-align: unset;
+  }
+
+  .checkbox input,
+  .children input {
+    width: auto;
+    margin: -2px 10px 0 0;
+  }
+
+  .checkbox a {
+    color: #6A3DA4;
+  }
+
+  .checkbox a:hover {
+    color: #6A3DA4;
+  }
+ .main-block form h1{
+  font-size: 1.5em;
+ }
+  button {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: none;
+    background: #6A3DA4;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  button:hover {
+    background: #82b534;
+  }
+
+  @media (min-width: 568px) {
+
+    .account-details>div,
+    .personal-details>div {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    label {
+      width: 40%;
+    }
+
+    input {
+      width: 60%;
+    }
+
+    select,
+    .children,
+    .gender,
+    .bdate-block {
+      width: calc(60% + 16px);
+    }
+  }

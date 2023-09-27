@@ -1,0 +1,209 @@
+<div class="add-travail">
+    <form (submit)="onSubmit()" class="modal-content from" *ngIf="!showModules">
+        <div >
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">partner_type <span class="required" style='color:red'>*</span></label>
+                        <select class="form-select" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            name="partner_type" [(ngModel)]="partner_type">
+                            <option disabled>Open this select menu</option>
+                            <option value="PHYSIQUE">PHYSIQUE</option>
+                            <option value="MORAL">MORAL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="partner_title" class="form-label">partner_title <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="partner_title" name="partner_title" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="contact_name" class="form-label">contact_name <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="contact_name" name="contact_name" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6" *ngIf="partner_type === 'PHYSIQUE'">
+                    <div class="mb-3">
+                        <label for="partner_ice" class="form-label">city <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="city" name="city" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6" *ngIf="partner_type === 'MORAL'">
+                    <div class="mb-3">
+                        <label for="partner_ice" class="form-label">partner_ice</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="partner_ice" name="partner_ice" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="contact_phone" class="form-label">contact_phone</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="contact_phone" name="contact_phone" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="contact_mail" class="form-label">contact_mail</label>
+                        <input type="email" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="contact_mail" name="contact_mail" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="partner_type === 'MORAL'">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="adresse_1" class="form-label">adresse 1</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="adresse_1" name="adresse_1" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="adresse_2" class="form-label">adresse 2</label>
+                        <input type="email" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="adresse_2" name="adresse_2" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="partner_type === 'MORAL'">
+                <div class="col-6">
+                    <div class="mb-5">
+                        <label for="city" class="form-label">city</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="city" name="city" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6"></div>
+            </div>
+            <div class="row btn-confirmation">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" (click)="onClose()" class="btn btn-outline-secondary">
+                        Annuler
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form *ngIf="showModules" (ngSubmit)="confirmation()" class="modal-content from">
+        <div class="row">
+            <h2>Choisir votre modules</h2>
+        </div>
+
+        <div >
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">partner_type <span class="required" style='color:red'>*</span></label>
+                        <select class="form-select" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            name="partner_type" [(ngModel)]="partner_type">
+                            <option disabled>Open this select menu</option>
+                            <option value="PHYSIQUE">PHYSIQUE</option>
+                            <option value="MORAL">MORAL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="partner_title" class="form-label">partner_title <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="partner_title" name="partner_title" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="contact_name" class="form-label">contact_name <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="contact_name" name="contact_name" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6" *ngIf="partner_type === 'PHYSIQUE'">
+                    <div class="mb-3">
+                        <label for="partner_ice" class="form-label">city</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="city" name="city" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6" *ngIf="partner_type === 'MORAL'">
+                    <div class="mb-3">
+                        <label for="partner_ice" class="form-label">partner_ice <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="partner_ice" name="partner_ice" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="contact_phone" class="form-label">contact_phone</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="contact_phone" name="contact_phone" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="contact_mail" class="form-label">contact_mail</label>
+                        <input type="email" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="contact_mail" name="contact_mail" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="partner_type === 'MORAL'">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="adresse_1" class="form-label">adresse 1 <span class="required" style='color:red'>*</span></label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="adresse_1" name="adresse_1" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="adresse_2" class="form-label">adresse 2</label>
+                        <input type="email" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="adresse_2" name="adresse_2" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="partner_type === 'MORAL'">
+                <div class="col-6">
+                    <div class="mb-5">
+                        <label for="city" class="form-label">city</label>
+                        <input type="text" class="form-control" [ngStyle]="{ 'border-color': err ? 'red' : 'none' }"
+                            [(ngModel)]="city" name="city" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-6">
+                <button type='submit' class="btn btn-primary">
+                    Confirmer
+                </button>
+            </div>
+            <div class="col-6">
+                <button type="button" (click)="onClose()" class="btn btn-outline-secondary">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,17 @@
+{
+  "/api-manager/*": {
+    "target": "https://casaconnect.alm-solutions.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api-workspace/*": {
+    "target": "https://workspace1.alm-solutions.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api-syndic/*": {
+    "target": "https://workspace1.alm-solutions.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

@@ -1,0 +1,79 @@
+<app-header></app-header>
+<!--<app-agent-detail *ngIf="!screenWidth"></app-agent-detail>-->
+
+<!--<div class="row modules-content">
+    <div class="col">
+    </div>
+    <div class="col-12 modules__selected">
+        hello
+    </div>
+</div>-->
+
+<div class="page-main">
+  <!-- //sidebar -->
+  <app-grid [title]='title' [item]="item" [active_item]="active_item"></app-grid>
+
+  <app-sidebar appHoverEffectSidebar></app-sidebar>
+  <div class="main-content main-content-casa app-content">
+    <div class="main-container container-fluid modules-content" style="padding-inline-start: 170px !important;">
+      <div class="container mt-4">
+        <div class="row syndic-residence">
+          <div class="col-4">
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal"
+              [routerLink]="['/module/syndic/residences/add']" routerLinkActive="router-link-active">Add Item </button>
+          </div>
+          <div class="input-group mb-3 col-4">
+            <input type="text" class="form-control" placeholder="Search...">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+          </div>
+        </div>
+
+
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>residence_name</th>
+              <th>nbr_lots</th>
+              <th>city_name</th>
+              <th>status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let residence of residence">
+              <th scope="row">1</th>
+              <td>{{residence.residence_name}}</td>
+              <td>{{residence.nbr_lots}}</td>
+              <td>{{residence.city_name}}</td>
+              <td>{{residence.residence_status}}</td>
+              <td class='actions'>
+                <button type="button" (click)="getResidence(residence.residence_id)" class="btn btn-primary"><i class="far fa-eye"></i></button>
+                <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--
+
+                <tr *ngFor="let item of residence">
+              <th scope="row">{{item.length}}</th>
+              <td>{{item.residence_name}}</td>
+              <td>{{item.nbr_lots}}</td>
+              <td>{{item.adresse_1}}</td>
+              <td>{{item.adresse_2}}</td>
+              <td>{{item.city_name}}</td>
+              <td class='actions'>
+                <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
+                <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+              </td>
+            </tr>
+  -->

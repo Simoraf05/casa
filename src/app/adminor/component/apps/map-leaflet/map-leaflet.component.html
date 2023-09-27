@@ -1,0 +1,30 @@
+<app-page-header  [title]="'Map Leaflet'" [items]="['Apps']" [active_item]="'Map Leaflet'" ></app-page-header> 
+
+	<!-- Row -->
+				<div class="row row-sm">
+					<div class="col-lg-12">
+						<div class="card custom-card" id="map">
+							<div class="card-body">
+								<div class="card-title m-2">Basic</div>
+								<div class="ht-300" id="leaflet1" leaflet [leafletOptions]="options1"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="card custom-card" id="map2">
+							<div class="card-body">
+								<div class="card-title m-2" >With Popup</div>
+									<div class="ht-300" id="leaflet2" leaflet [leafletOptions]="options2"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="card custom-card" id="map1">
+							<div class="card-body">
+								<div class="card-title m-2">Map With Circle</div>
+									<div class="ht-300" id="leaflet2" leaflet [leafletOptions]="options3"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->

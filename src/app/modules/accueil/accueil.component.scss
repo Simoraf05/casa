@@ -1,0 +1,33 @@
+.cadr-accueil{
+    cursor: pointer;
+}
+.cadr-accueil:hover{
+    background: #BA68C8;
+    color: white;
+}
+.main-container-accueil{
+    padding-inline-start: 200px !important;
+    padding-inline-end: 20px !important;
+}
+.col-accueil{
+    flex-grow: 0 !important;
+}
+.main-content-casa:after {
+    content: "";
+    height: 120px !important;
+    background: linear-gradient(45deg, var(--primary-bg-color), #9853af);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: 0;
+    inset-inline-start: 0;
+}
+*::before, *::after {
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 978px) {
+    .main-container-accueil{
+        padding-inline-start: 90px !important;
+        padding-inline-end: 20px !important;
+    }
+}

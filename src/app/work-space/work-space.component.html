@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="main-content-body">
+  <div class="row cards">
+    <div class="col card cadre-ajouter" (click)="toggleAddTravail()">
+      <i class="fa-solid fa-plus"></i>
+      <p>Ajouter un travail</p>
+    </div>
+    <a class="col card" *ngFor="let item of partners"
+      (click)="connect(item.agent_id ? item.agent_id : item.partner_id)">
+      <ng-container>
+        <div class="row">
+          <div class="col-10">
+          </div>
+
+        </div>
+
+        <strong>{{item.partner_title}}</strong>
+        <span>{{ splitPartnerId(item.agent_id) }}</span>
+        <span>{{ splitPartnerId(item.partner_id) }}</span>
+        <div class="row" style="visibility : hidden">
+          <div class="col-9">
+          </div>
+          <div class="col-2">
+            h
+          </div>
+        </div>
+      </ng-container>
+    </a>
+    <div class="col " *ngIf="showAddTravail">
+      <!-- Overlay Background -->
+      <div class="overlay" (click)="closeAddTravail()"></div>
+      <!-- Centered app-add-travail component -->
+      <div class="add-travail-container">
+        <app-add-travail (close)="closeAddTravail()"></app-add-travail>
+      </div>
+    </div>
+    <!-- Rest of your content here -->
+  </div>
+
+
+</div>
+
+<div *ngIf="showConfirme" class='confirm__component'>
+  <app-confirme [agent]="agent" class='confirmation-component' (cancel)="hideConfirmeComponent($event)" *ngIf="showConfirme"></app-confirme>
+</div>

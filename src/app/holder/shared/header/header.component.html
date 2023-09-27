@@ -1,0 +1,227 @@
+<!-- main-header -->
+
+<div class="main-header sticky nav nav-item side-header">
+  <div class="container-fluid main-container">
+    <div class="main-header-left">
+      <a href="">
+        <img src="./assets/img/brand/logo-white.jpeg" class="logo-1" alt="logo">
+      </a>
+
+    </div>
+    <button class="navbar-toggler nav-link icon navresponsive-toggler vertical-icon ms-auto" type="button"
+      data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" (click)="collapse.toggle()"
+      [attr.aria-expanded]="!isCollapsed">
+      <i class="fe fe-more-vertical header-icons navbar-toggler-icon"></i>
+    </button>
+
+    <app-add-travail *ngIf="displayPartner"></app-add-travail>
+
+
+    <div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0 mg-lg-s-auto">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-4" #collapse="ngbCollapse"
+        [(ngbCollapse)]="isCollapsed" [horizontal]="false">
+        <div class="main-header-right">
+          <div class="middle__header" *ngIf="!currentUrl">
+            <div class="selectdiv">
+              <div class="custom-select">
+                <select id="mySelect" class="styled-select" (change)="onSelectChange($event)">
+                  <option value="{{ item.agent_id }}" *ngFor="let item of partners"
+                    [selected]="item.agent_id === connectedAgentId">{{ item.partner_title }}</option>
+
+                  <option class="add__partner" (click)="addPartner()">Ajouter un partner</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+
+            </div>
+          </div>
+          <div class="nav nav-item navbar-nav-right mg-lg-s-auto">
+            <a type="button" target="_blank" routerLink="/adminor/dashboard/sales-dashboard"
+              style='height: 60%; margin-top: 5px;' class="btn btn-success">Adminor</a>
+
+
+            <div class="dropdown nav-item main-header-notification" ngbDropdown>
+              <a ngbDropdownToggle class="new nav-link" href="javascript:void(0);"><i class="fe fe-bell"></i><span
+                  class="pulse"></span></a>
+              <div ngbDropdownMenu class="dropdown-menu">
+                <div class="menu-header-content bg-primary text-start d-flex rounded-top-5">
+                  <div class="">
+                    <h6 class="menu-header-title text-white mb-0">
+                      4 New Notifications
+                    </h6>
+                  </div>
+                  <div class="my-auto ms-auto">
+                    <a class="badge bg-pill bg-success float-end" href="javascript:void(0);">Mark All Read</a>
+                  </div>
+                </div>
+                <a class="d-flex p-3 border-bottom" routerLink="/apps/mail/mail">
+                  <div class="notifyimg bg-warning-transparent">
+                    <i class="fe fe-mail text-warning"></i>
+                  </div>
+                  <div class="ms-3">
+                    <h5 class="notification-label mb-1">New review received</h5>
+                    <div class="notification-subtext">1 day ago</div>
+                  </div>
+                </a>
+                <a class="d-flex p-3 border-bottom" routerLink="/apps/mail/mail">
+                  <div class="notifyimg bg-primary-transparent">
+                    <i class="fe fe-check-circle text-primary"></i>
+                  </div>
+                  <div class="ms-3">
+                    <h5 class="notification-label mb-1">Project approved</h5>
+                    <div class="notification-subtext">4 hour ago</div>
+                  </div>
+                </a>
+                <a class="d-flex p-3 border-bottom" routerLink="/apps/mail/mail">
+                  <div class="notifyimg bg-purple-transparent">
+                    <i class="fe fe-upload-cloud text-purple"></i>
+                  </div>
+                  <div class="ms-3">
+                    <h5 class="notification-label mb-1">Updates Available</h5>
+                    <div class="notification-subtext">2 days ago</div>
+                  </div>
+                </a>
+                <a class="d-flex p-3 border-bottom" routerLink="/apps/mail/mail">
+                  <div class="notifyimg bg-pink-transparent">
+                    <i class="fe fe-file-text text-pink"></i>
+                  </div>
+                  <div class="ms-3">
+                    <h5 class="notification-label mb-1">New files available</h5>
+                    <div class="notification-subtext">10 hour ago</div>
+                  </div>
+                </a>
+                <div class="dropdown-footer text-center">
+                  <a routerLink="/apps/notification" class="btn btn-primary w-md tx-13">View All<i
+                      class="fe fe-arrow-right tx-12 ms-2 lh-1"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown nav-item main-header-message" ngbDropdown>
+              <a ngbDropdownToggle class="new nav-link" href="javascript:void(0);"><i class="fe fe-mail"></i><span
+                  class="pulse-danger"></span></a>
+              <div ngbDropdownMenu class="dropdown-menu">
+                <div class="menu-header-content bg-primary text-start d-flex rounded-top-5">
+                  <div class="">
+                    <h6 class="menu-header-title text-white mb-0">
+                      5 New Messages
+                    </h6>
+                  </div>
+                  <div class="my-auto mg-s-auto">
+                    <a class="badge bg-pill bg-info float-end" href="javascript:void(0);">Mark All Read</a>
+                  </div>
+                </div>
+                <!-- <ng-scrollbar> -->
+                <div ngbDropdownItem class="main-message-list ">
+                  <a class="p-3 d-flex border-bottom">
+                    <img routerlink="/apps/mail/mail" class="drop-img cover-image" src="./assets/img/users/9.jpg">
+                    <span class="avatar-status bg-teal"></span>
+                    <div class="wd-90p">
+                      <div class="d-flex">
+                        <h5 class="mb-1 name">Ahaija Neru</h5>
+                        <p class="time mb-0 text-end ms-auto float-end">
+                          20 min ago
+                        </p>
+                      </div>
+                      <p class="mb-0 desc">Are you ready to pickup your Delivery...</p>
+                    </div>
+                  </a>
+                  <a routerlink="/apps/mail/mail" class="p-3 d-flex border-bottom">
+                    <img class="drop-img cover-image" src="./assets/img/users/3.jpg">
+                    <span class="avatar-status bg-teal"></span>
+
+
+                    <div class="wd-90p">
+                      <div class="d-flex">
+                        <h5 class="mb-1 name">Gnapi Roliee</h5>
+                        <p class="time mb-0 text-end ms-auto float-end">
+                          10 min ago
+                        </p>
+                      </div>
+                      <p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
+                    </div>
+                  </a>
+                  <a routerlink="/apps/mail/mail" class="p-3 d-flex border-bottom">
+                    <img class="drop-img cover-image" src="./assets/img/users/5.jpg">
+                    <span class="avatar-status bg-teal"></span>
+
+                    <div class="wd-90p">
+                      <div class="d-flex">
+                        <h5 class="mb-1 name">Petey Cruiser</h5>
+                        <p class="time mb-0 text-end ms-auto float-end">
+                          35 min ago
+                        </p>
+                      </div>
+                      <p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
+                    </div>
+                  </a>
+                  <a routerlink="/apps/mail/mail" class="p-3 d-flex border-bottom">
+                    <img class="drop-img cover-image" src="./assets/img/users/12.jpg">
+                    <span class="avatar-status bg-danger"></span>
+
+                    <div class="wd-90p">
+                      <div class="d-flex">
+                        <h5 class="mb-1 name">Barney Cull</h5>
+                        <p class="time mb-0 text-end ms-auto float-end">
+                          30 min ago
+                        </p>
+                      </div>
+                      <p class="mb-0 desc">Here are some products ...</p>
+                    </div>
+                  </a>
+                  <a routerlink="/apps/mail/mail" class="p-3 d-flex border-bottom">
+                    <img class="drop-img cover-image" src="./assets/img/users/2.jpg">
+                    <span class="avatar-status bg-teal"></span>
+
+                    <div class="wd-90p">
+                      <div class="d-flex">
+                        <h5 class="mb-1 name">Sahar Dary</h5>
+                        <p class="time mb-0 text-end ms-auto float-end">
+                          13 min ago
+                        </p>
+                      </div>
+                      <p class="mb-0 desc">All set ! Now, time to get to you now......</p>
+                    </div>
+                  </a>
+                </div>
+                <!-- </ng-scrollbar> -->
+                <div class="dropdown-footer text-center">
+                  <a routerlink="/apps/mail/mail" class="btn btn-primary w-md tx-13">View All<i
+                      class="fe fe-arrow-right tx-12 ms-2 lh-1"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown main-profile-menu nav nav-item nav-link" ngbDropdown>
+              <a ngbDropdownToggle class="profile-user d-flex" href="javascript:void(0)"><img
+                  src="./assets/img/users/5.jpg" alt="user-img"
+                  class="rounded-circle mCS_img_loaded" /><span></span></a>
+
+              <div ngbDropdownMenu class="dropdown-menu">
+                <div class="main-header-profile header-img bg-primary rounded-top-5 p-3">
+                  <h6>Joyce Stewart</h6>
+                  <span>web Designer</span>
+                </div>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/pages/profile"><i class="fe fe-user"></i> My
+                  Profile</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/pages/profile"><i class="fe fe-edit"></i> Edit
+                  Profile</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/pages/profile"><i class="fe fe-clock"></i>
+                  Activity Logs</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/pages/profile"><i class="fe fe-settings"></i>
+                  Account Settings</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/custompages/login"><i class="fe fe-log-out"></i>
+                  Sign Out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /main-header -->
+<div *ngIf="showConfirme" class='confirm__component'>
+  <app-confirme [agent]="agent" class='confirmation-component' (cancel)="hideConfirmeComponent($event)"
+    *ngIf="showConfirme"></app-confirme>
+</div>

@@ -1,0 +1,350 @@
+.form-control:focus {
+  box-shadow: none;
+  border-color: #BA68C8
+}
+
+.profile-button {
+  background: rgb(99, 39, 120);
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #682773
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
+
+.add-experience:hover {
+  background: #BA68C8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #BA68C8
+}
+
+.cards__ {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  margin-top: -8px;
+}
+
+.card__ {
+  border-radius: 10px !important;
+  margin-left: 10px;
+  width: 150px !important;
+  height: 70px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.models__cards .prev__next {
+  position: absolute;
+  top: 21%;
+}
+
+
+.models__cards {}
+
+.stamp-lg {
+  min-width: 2rem !important;
+  height: 2rem !important;
+  line-height: 4rem !important;
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.slick-slider {
+  width: 88%;
+  margin: auto;
+  background: rgb(14, 13, 13);
+}
+
+body .slick-prev,
+body .slick-next {
+  height: 45px;
+  width: 40px;
+  background: grey !important;
+  z-index: 100;
+}
+
+/* custom-carousel.component.css */
+
+/* Ensure each card takes the full width of the column */
+.card {
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+/* Optionally, add spacing between cards */
+.card+.card {
+  margin-top: 20px;
+  /* Adjust as needed */
+}
+
+/* Center align text and icon */
+.card-body {
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Adjust other styles as needed */
+.carousel-item {}
+
+/* Optionally, remove right margin from the last item to prevent extra space */
+.carousel-item:last-child {
+  margin-right: 0;
+}
+
+.custom-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -100px;
+  height: 80px;
+}
+
+.carousel-controls {
+  position: absolute;
+  margin-top: -27px;
+}
+
+
+.carousel-controls .left__ {
+  position: relative;
+  left: -490px;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.carousel-controls .right__ {
+  position: relative;
+  left: 570px;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  }
+
+.selected-card {
+  transform: scale(1.1);
+  /* Increase the size of the selected card */
+  border: 2px solid #007bff;
+  background-color: rgb(218, 218, 218);
+  /* Add your desired border style */
+  /* Add other styles for the selected card */
+}
+
+/* Style for the selected icon */
+.selected-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #007bff;
+  /* Add your desired color */
+  /* Add other styles for the selected icon */
+}
+
+.modules__selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+@media only screen and (max-width: 900px) {
+  .cards__ {
+    margin-left: -20px;
+    margin-right: 36px;
+    margin-top: 26px;
+  }
+
+  .carousel-controls button {
+    position: relative;
+    color: white;
+    left: 18px;
+    padding-left: 103px;
+    padding-right: 103px;
+  }
+
+  .carousel-controls button .left__ {
+    left: -140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .carousel-controls button .right__ {
+    position: relative;
+    left: 140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .card__ {
+    border-radius: 10px !important;
+    margin-left: 10px;
+    width: 122px !important;
+    height: 100px;
+    margin-left: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cards__ {
+    margin-left: -20px;
+    margin-right: 36px;
+    margin-top: 26px;
+  }
+
+  .carousel-controls button {
+    position: relative;
+    color: white;
+    left: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .carousel-controls button .left__ {
+    left: -140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .carousel-controls button .right__ {
+    position: relative;
+    left: 140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .card__ {
+    border-radius: 10px !important;
+    margin-left: 10px;
+    width: 122px !important;
+    height: 100px;
+    margin-left: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .cards__ {
+    margin-left: -20px;
+    margin-right: 36px;
+    margin-top: 26px;
+  }
+
+  .carousel-controls button {
+    position: relative;
+    color: white;
+    left: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .carousel-controls button .left__ {
+    left: -140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .carousel-controls button .right__ {
+    position: relative;
+    left: 140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .card__ {
+    border-radius: 10px !important;
+    margin-left: 10px;
+    width: 122px !important;
+    height: 100px;
+    margin-left: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .cards__ {
+    margin-left: -20px;
+    margin-right: 36px;
+    margin-top: -6px;
+  }
+
+  .carousel-controls button {
+    position: relative;
+    color: white;
+    left: 18px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .carousel-controls button .left__ {
+    left: -140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .carousel-controls button .right__ {
+    position: relative;
+    left: 140px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+  }
+
+  .card__ {
+    border-radius: 10px !important;
+    margin-left: 10px;
+    width: 122px !important;
+    height: 100px;
+    margin-left: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+*/

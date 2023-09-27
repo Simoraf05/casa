@@ -1,0 +1,98 @@
+.logo-1 {
+  max-width: 100%;
+  mix-blend-mode: color-dodge;
+  width: 150px;
+  object-fit: contain;
+}
+
+.middle__header {
+
+
+}
+
+.middle__header select {
+  background-color: transparent;
+  color: white;
+}
+
+.middle__header select option {
+  color: black !important;
+}
+
+.hide-on-large-screens {
+  display: none;
+}
+
+/* Define a media query for screens with a minimum width of 1020px */
+@media (min-width: 1020px) {
+
+  /* Override the hide class for large screens */
+  .hide-on-large-screens {
+    display: block;
+    /* Or any other desired display property */
+  }
+
+  .app-sidebar__toggle {
+    //visibility: hidden;
+  }
+}
+
+.selectdiv {
+  position: relative;
+  /*Don't really need this just for demo styling*/
+
+  float: left;
+  min-width: 200px;
+}
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+  display: none;
+}
+
+.selectdiv:after {}
+
+.selectdiv select {
+  color: white;
+
+}
+
+.middle__header .selectdiv .add__partner {
+  color: #333;
+}
+/* Style the container div */
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the select element */
+.styled-select {
+  appearance: none; /* Remove default styling */
+  background-color: #fff; /* Background color */
+  border: 1px solid #ccc; /* Border color */
+  padding: 8px; /* Add some padding */
+  width: 100%; /* Full width */
+  font-size: 16px; /* Font size */
+}
+.styled-select option {
+  background-color: #fff; /* Background color for options */
+  color: #333; /* Text color for options */
+  font-size: 16px; /* Font size for options */
+}
+.add__partner {
+  background-color: #007bff; /* Background color for this option */
+  color: #fff; /* Text color for this option */
+  font-weight: bold; /* Bold font weight for this option */
+}
+/* Style the icon */
+.fa-chevron-down {
+  position: absolute;
+  right: 10px; /* Adjust the position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+/* Style the icon (Font Awesome 6 syntax) */
+
